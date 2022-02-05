@@ -3,16 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TopheadingComponent } from './topheading/topheading.component';
+
+import { LoadingBarModule } from '@ngx-loading-bar/core';
+
+import { HttpClientModule } from '@angular/common/http'
+import { NewsappapiservicesService} from './service/newsappapiservices.service';
+import { TechnewsComponent } from './technews/technews.component';
+import { BusinessnewsComponent } from './businessnews/businessnews.component'
+//import { HttpClientModule } from '.angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopheadingComponent,
+    TechnewsComponent,
+    BusinessnewsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    LoadingBarModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [NewsappapiservicesService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
